@@ -3,19 +3,21 @@ import hashlib
 
 # Create your models here.
 class MainTextBody(models.Model) :
+    text_id = models.IntegerField(default=0)
     name = models.CharField(max_length=512)
     body_text = models.TextField()
     last_update_date = models.DateTimeField('last update')
     author = models.CharField(max_length=512)
 
     def __str__(self) -> str:
-        return self.body_text
+        text_to_show = self.author + " last updated: " + str(self.last_update_date) + "\n\n" + self.body_text
+        return text_to_show
 
     def getTextBody(self) :
         return self.body_text
     
     def getTextMetadata(self) :
-        return [self.name, self.last_update_date, self.author]
+        return [self.text_id, self.name, self.last_update_date, self.author]
 
 class UserProfile(models.Model) :
     user_name = models.CharField(max_length=100)
