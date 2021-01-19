@@ -17,7 +17,7 @@ class MainTextBody(models.Model) :
         return self.body_text
     
     def getTextMetadata(self) :
-        return [self.text_id, self.name, self.last_update_date, self.author]
+        return [self.text_id, self.name, str(self.last_update_date), self.author]
 
 class UserProfile(models.Model) :
     user_name = models.CharField(max_length=100)

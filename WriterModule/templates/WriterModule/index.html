@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Writer Module Index Page</title>
+  </head>
+  <body>
+    <p>Writer Module</p>
+    <!-- Table with list of documents -->
+    <table align="center" border="1">
+      <tr>
+        <td>List of documents</td>
+        <td>Last Update</td>
+      </tr>
+      {% if doc_list %}
+      {% for doc in doc_list %}
+      <tr>
+        <td><a href="/writer/{{ doc.text_id }}/" >{{ doc.name }} </a></td>
+        <td>{{ doc.last_update_date }}</td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+    
+  </body>
+</html>
