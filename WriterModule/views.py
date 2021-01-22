@@ -15,16 +15,18 @@ def index(request) :
     return render(request, 'WriterModule/index.html', context)
 
 def docInfo(request, doc_id) :
-    doc_list = MainTextBody.objects.all()
-    doc_data = []
-    for d in doc_list :
-        if d.text_id == doc_id :
-            doc_data = d.getTextMetadata()
-            break
+    doc_list = MainTextBody.objects.filter(text_id=doc_id)
+    print (doc_list)
+    doc_data = doc_list[0]
     return HttpResponse(str(doc_data))
 
 def docList(request, user_name) :
-    return HttpResponse("List of notes for user: " + user_name)
+    doc_list = MainTextBody.objects.filter(author=user_name).order_by('-last_update_date')
+    print (doc_list)
+    context = {
+        'doc_list' : doc_list
+    }
+    return render(request, 'WriterModule/doc_list.html', context)
 
 def docRead(request, doc_id) :
     return HttpResponse("Showing document: " + str(doc_id))
