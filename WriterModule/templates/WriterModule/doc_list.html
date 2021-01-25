@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Writer Module Index Page</title>
-  </head>
-  <body>
-    <p>Writer Module</p>
-    
+{% extends "WriterModule/main.html" %}
+
+{% block se_content %}
+
     <!-- Table with list of documents -->
     <table align="center" border="1">
       <tr>
@@ -23,6 +18,8 @@
       {% endfor %}
       {% endif %}
     </table>
+
+{% endblock se_content %}
     
   </body>
 </html>

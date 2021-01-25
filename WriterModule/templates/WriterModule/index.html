@@ -1,27 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Writer Module Index Page</title>
-  </head>
-  <body>
-    <p>Writer Module</p>
-    <!-- Table with list of documents -->
-    <table align="center" border="1">
-      <tr>
-        <td>List of documents</td>
-        <td>Last Update</td>
-      </tr>
-      {% if doc_list %}
-      {% for doc in doc_list %}
-      <tr>
-        <td><a href="/writer/{{ doc.text_id }}/" >{{ doc.name }} </a></td>
-        <td>{{ doc.last_update_date }}</td>
-        <td><a href="/writer/{{ doc.text_id }}/read">Read</a></td>
-      </tr>
-      {% endfor %}
-      {% endif %}
+{% extends "WriterModule/main.html" %}
+
+{% block se_content %}
+    <P> Index page where all references should go </p>
+    <table>
+        <tr>
+            <td><a href="/writer/Piotrek/list">Doc List</a></td> <!-- how to reference to exact user - how to know it from a context? -->
+        </tr>
     </table>
-    
-  </body>
-</html>
+{% endblock se_content %}

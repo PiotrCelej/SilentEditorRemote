@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% block se_title %}
+      {{ page_title | default:"Silent Editor"}}
+    {% endblock se_title %}   
+  </head>
+  <body>
+
+  <P> NavBar goes here </p>
+  <hr>
+  
+    {% block se_content %}
+      <p> Silent Editor main template </p>
+    {% endblock se_content %}  
+
+  <hr>
+  <p size="small">Copyright Piotr Celej 2021</p>
+  </body> 
+</html>

@@ -1,0 +1,20 @@
+{% extends "WriterModule/main.html" %}
+
+{% block se_content %}
+
+  <!-- Doc view form -->
+  <table align="center">
+    <tr>
+      <td><b>{{ doc_name }}</b></td>
+    </tr>
+    <tr>
+      <td>{{ doc_text }}</td>
+    </tr>
+    <tr>
+      <td><i>Last update: {{ doc_date}}</i></td>
+    </tr>
+  </table>
+{% endblock se_content %}
+    
+  </body>
+</html>
