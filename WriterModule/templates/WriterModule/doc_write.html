@@ -1,0 +1,24 @@
+{% extends "WriterModule/main.html" %}
+
+{% block se_content %}
+
+  <!-- Doc write form -->
+  <table align="center">
+    <tr>
+      <td><b>{{ doc_name }}</b></td>
+    </tr>
+    <tr>
+      <td>
+        <form action="{% url 'WriterModule:docWrite' %}" method="post">
+          {% csrf_token %}
+          <textarea name="doc_text">{{ doc_text }}
+          <input type="submit" text="Save">
+        </form>
+      </td>
+    </tr>
+  </table>
+
+{% endblock se_content %}
+   
+  </body>
+</html>

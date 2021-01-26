@@ -33,3 +33,12 @@ def docRead(request, doc_id) :
         'doc_text' : doc_data.body_text
     }
     return render(request, 'WriterModule/doc_view.html', context)
+
+def docWrite(request, doc_id) :
+    doc_list = MainTextBody.objects.filter(text_id = doc_id)
+    doc_data = doc_list[0]
+    context = {
+        'doc_name' : doc_data.name,
+        'doc_text' : doc_data.doc_text,
+    }
+    return HttpResponse("Write page response placeholder")
