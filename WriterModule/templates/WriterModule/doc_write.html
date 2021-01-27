@@ -5,13 +5,13 @@
   <!-- Doc write form -->
   <table align="center">
     <tr>
-      <td><b>{{ doc_name }}</b></td>
+      <td><b>{{ doc.doc_name }}</b></td>
     </tr>
     <tr>
       <td>
-        <form action="{% url 'WriterModule:docWrite' %}" method="post">
+        <form action="{% url 'docWrite' doc.text_id %}" method="post">
           {% csrf_token %}
-          <textarea name="doc_text">{{ doc_text }}
+          <textarea rows="25" cols="250" name="doc_text">{{ doc.body_text }}</textarea><br/>
           <input type="submit" text="Save">
         </form>
       </td>

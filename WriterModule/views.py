@@ -1,7 +1,9 @@
 from django import template
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import context, loader
+from django.urls import reverse
 
 from .models import MainTextBody
 
@@ -37,8 +39,18 @@ def docRead(request, doc_id) :
 def docWrite(request, doc_id) :
     doc_list = MainTextBody.objects.filter(text_id = doc_id)
     doc_data = doc_list[0]
-    context = {
-        'doc_name' : doc_data.name,
-        'doc_text' : doc_data.doc_text,
-    }
-    return HttpResponse("Write page response placeholder")
+
+    try :
+        doc_data.body_text = request.POST['doc_text']
+    except (KeyError, MainTextBody.DoesNotExist) :
+        return render(
+            request, 
+            'WriterModule/doc_write.html',
+            {
+                'doc' : doc_data,
+                'message' : "Your document has not been saved"
+            }
+        )
+    else :
+        doc_data.save()
+        return HttpResponseRedirect(reverse('docWrite', args=(doc_data.text_id,)))
