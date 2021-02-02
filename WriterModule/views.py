@@ -1,9 +1,10 @@
 from django import template
 from django.http.response import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import context, loader
 from django.urls import reverse
+from collections import Counter
 
 from .models import MainTextBody
 
@@ -14,8 +15,7 @@ def index(request) :
     return render(request, 'WriterModule/index.html', context)
 
 def docInfo(request, doc_id) :
-    doc_list = MainTextBody.objects.filter(text_id=doc_id)
-    doc_data = doc_list[0]
+    doc_data = get_object_or_404(MainTextBody, text_id = doc_id)
     return HttpResponse(str(doc_data))
 
 def docList(request, user_name) :
@@ -27,19 +27,18 @@ def docList(request, user_name) :
     return render(request, 'WriterModule/doc_list.html', context)
 
 def docRead(request, doc_id) :
-    doc_list = MainTextBody.objects.filter(text_id=doc_id)
-    doc_data = doc_list[0]
+    doc_data = get_object_or_404(MainTextBody, text_id = doc_id)
+    no_lines = Counter(doc_data.body_text)
+    rows = no_lines['\n']+2
     context = {
-        'doc_name' : doc_data.name,
-        'doc_date' : doc_data.last_update_date,
-        'doc_text' : doc_data.body_text
+        'doc' : doc_data,
+        'doc_rows' : rows
     }
     return render(request, 'WriterModule/doc_view.html', context)
 
 def docWrite(request, doc_id) :
-    doc_list = MainTextBody.objects.filter(text_id = doc_id)
-    doc_data = doc_list[0]
-
+    doc_data = get_object_or_404(MainTextBody, text_id = doc_id)
+    
     try :
         doc_data.body_text = request.POST['doc_text']
     except (KeyError, MainTextBody.DoesNotExist) :

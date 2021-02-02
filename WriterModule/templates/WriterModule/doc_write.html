@@ -8,11 +8,18 @@
       <td><b>{{ doc.doc_name }}</b></td>
     </tr>
     <tr>
-      <td>
+      <td align="left">
         <form action="{% url 'docWrite' doc.text_id %}" method="post">
           {% csrf_token %}
-          <textarea rows="25" cols="250" name="doc_text">{{ doc.body_text }}</textarea><br/>
-          <input type="submit" text="Save">
+          <input type="submit" value="Save"><br/>
+      </td>
+      <td align="right">
+        <a href="/writer/Piotrek/list">Doc List</a> <!-- due to change - should be SAVE & CLOSE -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+          <textarea cols="120" rows="20" name="doc_text">{{ doc.body_text }}</textarea><br/>
         </form>
       </td>
     </tr>

@@ -5,13 +5,18 @@
   <!-- Doc view form -->
   <table align="center">
     <tr>
-      <td><b>{{ doc_name }}</b></td>
+      <td><b>{{ doc.name }}</b></td>
+      <td align="right"><a href="/writer/{{ doc.text_id }}/write">Edit</a></td>
     </tr>
     <tr>
-      <td>{{ doc_text }}</td>
+      <td>
+        <textarea readonly disabled cols="120" rows="{{ doc_rows }}">
+        {{ doc.body_text }}
+        </textarea>
+      </td>
     </tr>
     <tr>
-      <td><i>Last update: {{ doc_date}}</td></i></td>
+      <td><i>Last update: {{ doc_date }}</td></i></td>
     </tr>
   </table>
 {% endblock se_content %}

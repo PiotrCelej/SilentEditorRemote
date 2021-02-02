@@ -1,5 +1,9 @@
 {% extends "WriterModule/main.html" %}
 
+{% block se_title %}
+  <title> {{ page_title }} </title>
+{% endblock se_title %}
+
 {% block se_content %}
 
     <!-- Table with list of documents -->
@@ -14,6 +18,7 @@
         <td><a href="/writer/{{ doc.text_id }}/" >{{ doc.name }} </a></td>
         <td>{{ doc.last_update_date }}</td>
         <td><a href="/writer/{{ doc.text_id }}/read">Read</a></td>
+        <td><a href="/writer/{{ doc.text_id }}/write">Edit</a></td>
       </tr>
       {% endfor %}
       {% endif %}
