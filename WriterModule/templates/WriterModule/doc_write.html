@@ -5,11 +5,14 @@
   <!-- Doc write form -->
   <table align="center">
     <tr>
-      <td><b>{{ doc.doc_name }}</b></td>
+      <td><p align="center">{{ wr_message }}</p></td>
+    </tr>
+    <tr>
+      <td><b>{{ doc_name }}</b></td>
     </tr>
     <tr>
       <td align="left">
-        <form action="{% url 'docWrite' doc.text_id %}" method="post">
+        <form action="{% url 'getTextBody' doc.text_id %}" method="post">
           {% csrf_token %}
           <input type="submit" value="Save"><br/>
       </td>
@@ -19,7 +22,7 @@
     </tr>
     <tr>
       <td>
-          <textarea cols="120" rows="20" name="doc_text">{{ doc.body_text }}</textarea><br/>
+          {{ form }}
         </form>
       </td>
     </tr>

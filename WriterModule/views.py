@@ -1,5 +1,5 @@
 from django import template
-from django.http.response import HttpResponseRedirect
+from django.http.response import Http404, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import context, loader
@@ -7,6 +7,37 @@ from django.urls import reverse
 from collections import Counter
 
 from .models import MainTextBody
+from .forms import DocEditForm
+
+#forms view goes here
+def getTextBody(request, doc_id) :
+    print (doc_id)
+    text = MainTextBody.objects.filter(text_id = doc_id)
+    context = {
+        'doc_name' : "text.name"
+    }
+    if request.method == 'POST' :
+        form = DocEditForm(request.POST)
+        if form.is_valid() :
+            doc_text = form.cleaned_data['body_text']
+            try :
+                text.body_text = doc_text
+                text.save()
+            except doc_text.DoesNotExist() :
+                raise Http404('Text does not exist')
+            return HttpResponseRedirect(f'doc_write.html', {
+                'form' : form,
+                'doc_name' : text.name,
+                'wr_message' : "Document saved",
+            })
+    else :
+        form = DocEditForm()
+        context = {
+            'form' : form,
+#            'doc_name' : text.name,
+            'wr_message' : "New document"
+        }
+    return render(request, 'doc_write.html', context)
 
 # Create your views here. And this comment is to check
 def index(request) :
