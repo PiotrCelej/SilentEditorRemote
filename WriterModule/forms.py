@@ -1,4 +1,7 @@
 from django import forms
+from .models import MainTextBody
 
-class DocEditForm(forms.Form) :
-    body_text = forms.CharField(label='Text Area should be here')
+class DocEditForm(forms.ModelForm) :
+    class Meta :
+        model = MainTextBody
+        fields = '__all__'

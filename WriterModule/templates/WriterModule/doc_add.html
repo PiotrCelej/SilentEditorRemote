@@ -1,18 +1,29 @@
 {% extends "WriterModule/main.html" %}
 
+{% block se_title %}
+    <title> Silent Editor - Add Document </title>
+{% endblock se_title %}
+
+
 {% block se_content %}
 
   <!-- Doc write form -->
+  
   <table align="center">
+  {% if submitted %}
     <tr>
-      <td><p align="center">{{ wr_message }}</p></td>
+      <td><p align="center">New document added</p></td>
     </tr>
+    <td align="right">
+      <a href="/writer/Piotrek/list">Doc List</a> <!-- due to change - should be SAVE & CLOSE -->
+    </td>
+{% else %}
     <tr>
       <td><b>{{ doc.name }}</b></td>
     </tr>
     <tr>
       <td align="left">
-        <form action="{% url 'docWrite' doc.text_id %}" method="post">
+        <form action="" method="post">
           {% csrf_token %}
           <input type="submit" value="Save"><br/>
       </td>
@@ -22,13 +33,11 @@
     </tr>
     <tr>
       <td>
-          <textarea cols="120" rows="20" name="doc_text">{{ doc.body_text }}</textarea>
+          {{ form }}
         </form>
       </td>
     </tr>
+  {% endif %}  
   </table>
 
 {% endblock se_content %}
-   
-  </body>
-</html>
