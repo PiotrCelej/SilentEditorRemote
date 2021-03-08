@@ -1,1 +1,4 @@
 Relacje pomiędzy elementami bazy danych - treść - użytkownik - jak zamodelować je w django
+
+TODO: Zmiana bazy danych na PostresSQL
+TODO: Język modelowania obiektów w całej aplikacji - uniezależnić od wyświetlania, 

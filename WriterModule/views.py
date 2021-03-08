@@ -8,6 +8,8 @@ from .models import MainTextBody
 from .forms import DocEditForm
 
 
+# TODO: Add view for loging the user
+
 # Create your views here. And this comment is to check
 def index(request) :
     context = {
