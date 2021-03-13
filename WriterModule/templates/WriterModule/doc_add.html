@@ -22,9 +22,9 @@
       <td><b>{{ doc.name }}</b></td>
     </tr>
     <tr>
+    <form action="" method="post">
+      {% csrf_token %}
       <td align="left">
-        <form action="" method="post">
-          {% csrf_token %}
           <input type="submit" value="Save"><br/>
       </td>
       <td align="right">
@@ -33,10 +33,9 @@
     </tr>
     <tr>
       <td>
-          {{ form.name }}<br/>
-          {{ form.body_text|safe }}<br/>
-        </form>
+          {{ form }}
       </td>
+    </form>
     </tr>
   {% endif %}  
   </table>
