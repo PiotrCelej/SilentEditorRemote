@@ -2,3 +2,5 @@ Relacje pomiędzy elementami bazy danych - treść - użytkownik - jak zamodelow
 
 TODO: Zmiana bazy danych na PostresSQL
 TODO: Język modelowania obiektów w całej aplikacji - uniezależnić od wyświetlania, 
+
+TODO: Dodanie aplikacji paragraph do projektu
