@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ParagraphmoduleConfig(AppConfig):
+class ParagraphModuleConfig(AppConfig):
     name = 'ParagraphModule'

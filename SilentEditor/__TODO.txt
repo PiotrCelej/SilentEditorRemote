@@ -4,3 +4,4 @@ TODO: Zmiana bazy danych na PostresSQL
 TODO: Język modelowania obiektów w całej aplikacji - uniezależnić od wyświetlania, 
 
 TODO: Dodanie aplikacji paragraph do projektu
+TODO: włączenie walidacji haseł użytkowników w momencie przejścia na PRD

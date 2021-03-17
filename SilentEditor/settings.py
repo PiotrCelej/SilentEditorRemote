@@ -33,13 +33,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'WriterModule.apps.WritermoduleConfig',
     'ParagraphModule.apps.ParagraphModuleConfig',
+    'django_summernote',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -88,18 +88,18 @@ DATABASES = {
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+#    },
+#    {
+#        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+#    },
 ]
 
 
@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 # Summernote config parameters
 SUMMERNOTE_CONFIG = {
     # Using SummernoteWidget - iframe mode, default
-    'iframe': True,
+    #'iframe': True,
 
     # Or, you can set it to `False` to use SummernoteInplaceWidget by default - no iframe mode
     # In this case, you have to load Bootstrap/jQuery sources and dependencies manually.
@@ -161,15 +161,15 @@ SUMMERNOTE_CONFIG = {
         #'lang': 'pl-PL',
 
         # You can also add custom settings for external plugins
-        'print': {
-            'stylesheetUrl': '/some_static_folder/printable.css',
-        },
-        'codemirror': {
-            'mode': 'htmlmixed',
-            'lineNumbers': 'true',
+        #'print': {
+        #    'stylesheetUrl': '/some_static_folder/printable.css',
+        #},
+        #'codemirror': {
+        #    'mode': 'htmlmixed',
+        #    'lineNumbers': 'true',
             # You have to include theme file in 'css' or 'css_for_inplace' before using it.
-            'theme': 'monokai',
-        },
+        #    'theme': 'monokai',
+        #},
     },
 
     # Require users to be authenticated for uploading attachments.
