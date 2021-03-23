@@ -149,12 +149,12 @@ SUMMERNOTE_CONFIG = {
         'toolbar': [
             ['style', ['style']],
             ['font', ['bold', 'underline', 'clear']],
-            ['fontname', ['fontname']],
+            #['fontname', ['fontname']],
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['table', ['table']],
          #   ['insert', ['link', 'picture', 'video']],
-         #   ['view', ['fullscreen', 'codeview', 'help']],
+            ['view', ['fullscreen', 'codeview', 'help']],
         ],
 
         # Or, explicitly set language/locale for editor

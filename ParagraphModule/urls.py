@@ -4,5 +4,5 @@ from . import views
 # Paragraph module urls patterns for navigation
 
 urlpatterns = [
-    #path('', views.index, name='index'),
+    path('', views.index, name='index'),
 ]
