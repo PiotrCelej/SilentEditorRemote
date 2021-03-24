@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'SilentEditor.apps.SilentEditorConfig',
     'WriterModule.apps.WritermoduleConfig',
     'ParagraphModule.apps.ParagraphModuleConfig',
     'django_summernote',
