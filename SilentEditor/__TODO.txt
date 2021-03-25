@@ -1,9 +1,8 @@
-Relacje pomiędzy elementami bazy danych - treść - użytkownik - jak zamodelować je w django
+TODO: Relacje pomiędzy elementami bazy danych - treść - użytkownik - jak zamodelować je w django
 
 TODO: Zmiana bazy danych na PostresSQL
 TODO: Język modelowania obiektów w całej aplikacji - uniezależnić od wyświetlania, 
 
-TODO: Dodanie aplikacji paragraph do projektu
 TODO: włączenie walidacji haseł użytkowników w momencie przejścia na PRD
 
 TODO: W momencie implementacji logowania użytkowników zmiana wywołania w templatkach na powiązane z zalogowanym użytkownikiem
