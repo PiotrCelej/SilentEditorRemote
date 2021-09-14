@@ -6,3 +6,5 @@ TODO: Język modelowania obiektów w całej aplikacji - uniezależnić od wyświ
 TODO: włączenie walidacji haseł użytkowników w momencie przejścia na PRD
 
 TODO: W momencie implementacji logowania użytkowników zmiana wywołania w templatkach na powiązane z zalogowanym użytkownikiem
+
+TODO: dodanie widoku paragrafów, który pokazuje jednocześnie treść danego paragrafu oraz wszystkie opcje przejścia do kolejnych paragrafów
