@@ -8,7 +8,7 @@ class Paragraph(models.Model) :
     par_is_end = models.BooleanField(default=False)
 
     def __str__(self) -> str :
-        text_to_show = "[" + self.par_id +";"+ self.par_body +";"+ self.par_is_root +";"+ self.par_is_end +"]"
+        text_to_show = "[" + self.par_id +";"+ self.par_body +";"+ str(self.par_is_root) +";"+ str(self.par_is_end) +"]"
         return text_to_show
 
     def getParBody(self) :

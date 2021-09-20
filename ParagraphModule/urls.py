@@ -5,4 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('<str:user_name>/list/', views.paragraphList, name='parList'),
 ]

@@ -1,0 +1,33 @@
+{% extends "ParagraphModule/main.html" %}
+
+{% block se_title %}
+  <title> {{ page_title }} </title>
+{% endblock se_title %}
+
+{% block se_content %}
+
+    <!-- Table with list of documents -->
+    <table align="center" border="1">
+      <tr>
+        <a href="...">Add New</a>
+      </tr>
+      <tr>
+        <td>List of paragraphs</td>
+        <td>Last Update</td>
+      </tr>
+      {% if par_list %}
+      {% for par in par_list %}
+      <tr>
+        <td><a href="/" >{{ doc.name }} </a></td>
+        <td>{{ doc.last_update_date }}</td>
+        <td><a href="/read">Read</a></td>
+        <td><a href="/write">Edit</a></td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </table>
+
+{% endblock se_content %}
+    
+  </body>
+</html>
