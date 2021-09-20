@@ -28,3 +28,13 @@ class ParagraphLinks(models.Model) :
 
     def getFromText(self) :
         return self.par_from_text
+
+class Character(models.Model) :
+    char_id = models.CharField(max_length=100)
+
+    # types of characters:
+    # NPC - npc which interacts with our hero
+    # HERO - a hero managed by palyer
+    char_type = models.CharField(max_length=20)
+    char_name = models.CharField(max_length=100)
+    
