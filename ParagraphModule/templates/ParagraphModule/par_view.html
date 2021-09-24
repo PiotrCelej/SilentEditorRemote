@@ -1,0 +1,43 @@
+{% extends "ParagraphModule/main.html" %}
+
+{% block se_title %}
+    <title> Silent Editor - Add Paragraph </title>
+{% endblock se_title %}
+
+
+{% block se_content %}
+
+  <!-- Paragraph view form -->
+  
+  <table align="center">
+  {% if submitted %}
+    <tr>
+      <td><p align="center">New Paragraph added</p></td>
+    </tr>
+    <td align="right">
+      <a href="/paragraph/Piotrek/list">Par List</a> <!-- due to change - should be SAVE & CLOSE -->
+    </td>
+  {% else %}
+    <tr>
+      <td><b>...</b></td>
+    </tr>
+    <tr>
+    <form action="" method="post">
+      {% csrf_token %}
+      <td align="left">
+          <input type="submit" value="Save"><br/>
+      </td>
+      <td align="right">
+        <a href="/paragraph/Piotrek/list">Par List</a> <!-- due to change - should be SAVE & CLOSE -->
+      </td>
+    </tr>
+    <tr>
+      <td>
+          {{ form }}
+      </td>
+    </form>
+    </tr>
+  {% endif %}  
+  </table>
+
+{% endblock se_content %}
