@@ -9,7 +9,7 @@
     <!-- Table with list of documents -->
     <table align="center" border="1">
       <tr>
-        <a href="paragraph/viewParagraph">Add New</a>
+        <a href="/paragraph/viewParagraph">Add New</a>
       </tr>
       <tr>
         <td>List of paragraphs</td>
@@ -18,8 +18,8 @@
       {% if par_list %}
       {% for par in par_list %}
       <tr>
-        <td><a href="/" >{{ doc.name }} </a></td>
-        <td>{{ doc.last_update_date }}</td>
+        <td><a href="/" >{{ par.par_id }} </a></td>
+        <td>{{ par.par_body }}</td>
         <td><a href="/read">Read</a></td>
         <td><a href="/write">Edit</a></td>
       </tr>
